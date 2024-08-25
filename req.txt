@@ -1,0 +1,441 @@
+motor~=2.3.0
+python-dotenv~=0.15.0
+pymongo==3.11.4
+fastapi~=0.63.0
+PyJWT~=2.0.1
+pydantic[email]
+uvicorn~=0.13.3
+dnspython~=2.1.0
+bcrypt~=3.2.0
+
+[AND]
+motor~=2.3.0
+python-dotenv~=0.15.0 (Note: You installed python-dotenv version 1.0.1, which is newer than 0.15.0. The dependency might be satisfied by either version, but it's good to check compatibility.)
+pymongo==3.11.4
+fastapi~=0.63.0 (You installed fastapi version 0.112.2, which is much newer than 0.63.0. This should be checked for compatibility with other dependencies.)
+PyJWT~=2.0.1 (You installed PyJWT version 2.9.0, which is newer than 2.0.1. This should be fine but check for compatibility.)
+pydantic[email]
+uvicorn~=0.13.3 (You installed uvicorn version 0.30.6, which is much newer than 0.13.3. This should be checked for compatibility.)
+dnspython~=2.1.0 (You installed dnspython version 2.6.1, which is newer but should be compatible.)
+bcrypt~=3.2.0 (You installed bcrypt version 4.2.0, which is newer but should be compatible.)
+
+
+[from]
+
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> python main.py
+Traceback (most recent call last):
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\main.py", line 1, in <module>
+    import uvicorn
+ModuleNotFoundError: No module named 'uvicorn'
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> pip install uvicorn
+Collecting uvicorn
+  Using cached uvicorn-0.30.6-py3-none-any.whl.metadata (6.6 kB)
+Collecting click>=7.0 (from uvicorn)
+  Using cached click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+Collecting h11>=0.8 (from uvicorn)
+  Using cached h11-0.14.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting colorama (from click>=7.0->uvicorn)
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Using cached uvicorn-0.30.6-py3-none-any.whl (62 kB)
+Using cached click-8.1.7-py3-none-any.whl (97 kB)
+Using cached h11-0.14.0-py3-none-any.whl (58 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Installing collected packages: h11, colorama, click, uvicorn
+Successfully installed click-8.1.7 colorama-0.4.6 h11-0.14.0 uvicorn-0.30.6
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> python main.py     
+Traceback (most recent call last):
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\main.py", line 2, in <module>
+    from fastapi import FastAPI
+ModuleNotFoundError: No module named 'fastapi'
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> pip install fastapi
+Collecting fastapi
+  Using cached fastapi-0.112.2-py3-none-any.whl.metadata (27 kB)   
+Collecting starlette<0.39.0,>=0.37.2 (from fastapi)
+  Using cached starlette-0.38.2-py3-none-any.whl.metadata (5.9 kB)
+Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi)
+  Using cached pydantic-2.8.2-py3-none-any.whl.metadata (125 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi)
+  Using cached typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting annotated-types>=0.4.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi)
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.20.1 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi)
+  Using cached pydantic_core-2.20.1-cp311-none-win_amd64.whl.metadata (6.7 kB)
+Collecting anyio<5,>=3.4.0 (from starlette<0.39.0,>=0.37.2->fastapi)
+  Using cached anyio-4.4.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.4.0->starlette<0.39.0,>=0.37.2->fastapi)
+  Using cached idna-3.8-py3-none-any.whl.metadata (9.9 kB)
+Collecting sniffio>=1.1 (from anyio<5,>=3.4.0->starlette<0.39.0,>=0.37.2->fastapi)
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Using cached fastapi-0.112.2-py3-none-any.whl (93 kB)
+Using cached pydantic-2.8.2-py3-none-any.whl (423 kB)
+Using cached pydantic_core-2.20.1-cp311-none-win_amd64.whl (1.9 MB)
+Using cached starlette-0.38.2-py3-none-any.whl (72 kB)
+Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Using cached anyio-4.4.0-py3-none-any.whl (86 kB)
+Using cached idna-3.8-py3-none-any.whl (66 kB)
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Installing collected packages: typing-extensions, sniffio, idna, annotated-types, pydantic-core, anyio, starlette, pydantic, fastapi  
+Successfully installed annotated-types-0.7.0 anyio-4.4.0 fastapi-0.112.2 idna-3.8 pydantic-2.8.2 pydantic-core-2.20.1 sniffio-1.3.1 starlette-0.38.2 typing-extensions-4.12.2
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> python main.py     
+INFO:     Will watch for changes in these directories: ['C:\\dev\\Golang api swagger\\Good-Luck-Charlie']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [29608] using StatReload        
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "C:\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started     
+    target(sockets=sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 69, in serve
+    await self._serve(sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 76, in _serve
+    config.load()
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 22, in import_from_string        
+    raise exc from None
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string        
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)    
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import  
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\app.py", line 2, in <module>
+    from routes.todo_routes import router as todoRouter
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\routes\todo_routes.py", line 5, in <module>
+    from app.db import (
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\db.py", line 1, in <module>
+    import motor.motor_asyncio
+ModuleNotFoundError: No module named 'motor'
+INFO:     Stopping reloader process [29608]
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> pip install motor
+Collecting motor
+  Using cached motor-3.5.1-py3-none-any.whl.metadata (21 kB)       
+Collecting pymongo<5,>=4.5 (from motor)
+  Using cached pymongo-4.8.0-cp311-cp311-win_amd64.whl.metadata (22 kB)
+Collecting dnspython<3.0.0,>=1.16.0 (from pymongo<5,>=4.5->motor)
+  Using cached dnspython-2.6.1-py3-none-any.whl.metadata (5.8 kB)  
+Using cached motor-3.5.1-py3-none-any.whl (74 kB)
+Using cached pymongo-4.8.0-cp311-cp311-win_amd64.whl (630 kB)
+Using cached dnspython-2.6.1-py3-none-any.whl (307 kB)
+Installing collected packages: dnspython, pymongo, motor
+Successfully installed dnspython-2.6.1 motor-3.5.1 pymongo-4.8.0
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> python main.py     
+INFO:     Will watch for changes in these directories: ['C:\\dev\\Golang api swagger\\Good-Luck-Charlie']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [30764] using StatReload        
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "C:\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started     
+    target(sockets=sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 190, in run     
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 118, in run     
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 69, in serve
+    await self._serve(sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 76, in _serve
+    config.load()
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 22, in import_from_string        
+    raise exc from None
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string        
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)    
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\app.py", line 2, in <module>
+    from routes.todo_routes import router as todoRouter
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\routes\todo_routes.py", line 5, in <module>
+    from app.db import (
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\db.py", line 2, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+INFO:     Stopping reloader process [30764]
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> pip install python-dotenv
+Collecting python-dotenv
+  Using cached python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB)
+Using cached python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Installing collected packages: python-dotenv
+Successfully installed python-dotenv-1.0.1
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> python main.py
+INFO:     Will watch for changes in these directories: ['C:\\dev\\Golang api swagger\\Good-Luck-Charlie']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [14496] using StatReload        
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "C:\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started     
+    target(sockets=sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 190, in run     
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 118, in run     
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 69, in serve
+    await self._serve(sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 76, in _serve
+    config.load()
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 22, in import_from_string        
+    raise exc from None
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string        
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)    
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import  
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\app.py", line 2, in <module>
+    from routes.todo_routes import router as todoRouter
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\routes\todo_routes.py", line 5, in <module>
+    from app.db import (
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\db.py", line 5, in <module>
+    import bcrypt
+ModuleNotFoundError: No module named 'bcrypt'
+INFO:     Stopping reloader process [14496]
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> pip install bcrypt
+Collecting bcrypt
+  Downloading bcrypt-4.2.0-cp39-abi3-win_amd64.whl.metadata (9.9 kB)
+Downloading bcrypt-4.2.0-cp39-abi3-win_amd64.whl (151 kB)
+Installing collected packages: bcrypt
+Successfully installed bcrypt-4.2.0
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> python main.py    
+INFO:     Will watch for changes in these directories: ['C:\\dev\\Golang api swagger\\Good-Luck-Charlie']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [33816] using StatReload        
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "C:\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started     
+    target(sockets=sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 190, in run     
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 69, in serve
+    await self._serve(sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 76, in _serve
+    config.load()
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 22, in import_from_string        
+    raise exc from None
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string        
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)    
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\app.py", line 2, in <module>
+    from routes.todo_routes import router as todoRouter
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\routes\todo_routes.py", line 13, in <module>
+    from auth.auth_bearer import JWTBearer
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\auth\auth_bearer.py", line 4, in <module>
+    from .auth_handler import decodeJWT
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\auth\auth_handler.py", line 3, in <module>
+    import jwt
+ModuleNotFoundError: No module named 'jwt'
+INFO:     Stopping reloader process [33816]
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> pip install pyjwt
+Collecting pyjwt
+  Using cached PyJWT-2.9.0-py3-none-any.whl.metadata (3.0 kB)
+Using cached PyJWT-2.9.0-py3-none-any.whl (22 kB)
+Installing collected packages: pyjwt
+Successfully installed pyjwt-2.9.0
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> python main.py   
+INFO:     Will watch for changes in these directories: ['C:\\dev\\Golang api swagger\\Good-Luck-Charlie']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [30196] using StatReload        
+C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_config.py:341: UserWarning: Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+  warnings.warn(message, UserWarning)
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\networks.py", line 404, in import_email_validator  
+    import email_validator
+ModuleNotFoundError: No module named 'email_validator'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started     
+    target(sockets=sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 190, in run     
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\runners.py", line 118, in run     
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 69, in serve
+    await self._serve(sockets)
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\server.py", line 76, in _serve
+    config.load()
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string        
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)    
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import  
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\app\app.py", line 2, in <module>
+    from routes.todo_routes import router as todoRouter
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\routes\todo_routes.py", line 14, in <module>
+    from models.models import (
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\models\models.py", line 5, in <module>
+    class UserLoginSchema(BaseModel):
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_model_construction.py", line 205, in __new__
+    complete_model_class(
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_model_construction.py", line 534, in complete_model_class
+    schema = cls.__get_pydantic_core_schema__(cls, handler)        
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\main.py", line 643, in __get_pydantic_core_schema__
+    return handler(source)
+           ^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_schema_generation_shared.py", line 83, in __call__
+    schema = self._handler(source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 512, in generate_schema
+    schema = self._generate_schema_inner(obj)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 784, in _generate_schema_inner
+    return self._model_schema(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 591, in _model_schema
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 591, in <dictcomp>
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 947, in _generate_md_field_schema
+    common_field = self._common_field_schema(name, field_info, decorators)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 1134, in _common_field_schema
+    schema = self._apply_annotations(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 1890, in _apply_annotations
+    schema = get_inner_schema(source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_schema_generation_shared.py", line 83, in __call__
+    schema = self._handler(source_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 1869, in inner_handler
+    from_property = self._generate_schema_from_property(obj, source_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\_internal\_generate_schema.py", line 679, in _generate_schema_from_property
+    schema = get_schema(
+             ^^^^^^^^^^^
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\networks.py", line 444, in __get_pydantic_core_schema__
+    import_email_validator()
+  File "C:\dev\Golang api swagger\Good-Luck-Charlie\env\Lib\site-packages\pydantic\networks.py", line 406, in import_email_validator  
+    raise ImportError('email-validator is not installed, run `pip install pydantic[email]`') from e
+ImportError: email-validator is not installed, run `pip install pydantic[email]`
+INFO:     Stopping reloader process [30196]
+(env) PS C:\dev\Golang api swagger\Good-Luck-Charlie> pip install pydantic[email]
+Requirement already satisfied: pydantic[email] in c:\dev\golang api swagger\good-luck-charlie\env\lib\site-packages (2.8.2)
+Requirement already satisfied: annotated-types>=0.4.0 in c:\dev\golang api swagger\good-luck-charlie\env\lib\site-packages (from pydantic[email]) (0.7.0)
+Requirement already satisfied: pydantic-core==2.20.1 in c:\dev\golang api swagger\good-luck-charlie\env\lib\site-packages (from pydantic[email]) (2.20.1)
+Requirement already satisfied: typing-extensions>=4.6.1 in c:\dev\golang api swagger\good-luck-charlie\env\lib\site-packages (from pydantic[email]) (4.12.2)
+Collecting email-validator>=2.0.0 (from pydantic[email])
+  Using cached email_validator-2.2.0-py3-none-any.whl.metadata (25 kB)
+Requirement already satisfied: dnspython>=2.0.0 in c:\dev\golang api swagger\good-luck-charlie\env\lib\site-packages (from email-validator>=2.0.0->pydantic[email]) (2.6.1)
+Requirement already satisfied: idna>=2.0.0 in c:\dev\golang api swagger\good-luck-charlie\env\lib\site-packages (from email-validator>=2.0.0->pydantic[email]) (3.8)
+Using cached email_validator-2.2.0-py3-none-any.whl (33 kB)
+Installing collected packages: email-validator
+Successfully installed email-validator-2.2.0
