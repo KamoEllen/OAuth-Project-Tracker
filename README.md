@@ -119,6 +119,9 @@ C:.
 
 - **Date Format Handling:** Updated date format handling in `ProjectSchema` and `UpdateProjectModel` to use `datetime` for consistent date-time representation.
 
+### Screenshot
+![Description of Image](https://github.com/KamoEllen/OAuth-Project-Tracker/blob/main/img.png?raw=true)
+
 ### Future Improvements
 
 - **Enhanced Validation:** Plan to enhance validation and add more robust error handling.
